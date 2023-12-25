@@ -18,12 +18,58 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  --colorscheme = "astrodark",
+  colorscheme = "poimandres",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
     underline = true,
+  },
+
+  icons = {
+    ActiveLSP = "",
+    ActiveTS = " ",
+    BufferClose = "",
+    DapBreakpoint = "",
+    DapBreakpointCondition = "",
+    DapBreakpointRejected = "",
+    DapLogPoint = "",
+    DapStopped = "",
+    DefaultFile = "",
+    Diagnostic = "",
+    DiagnosticError = "",
+    DiagnosticHint = "",
+    DiagnosticInfo = "",
+    DiagnosticWarn = "",
+    Ellipsis = "",
+    FileModified = "",
+    FileReadOnly = "",
+    FoldClosed = "",
+    FoldOpened = "",
+    FolderClosed = "",
+    FolderEmpty = "",
+    FolderOpen = "",
+    Git = "",
+    GitAdd = "",
+    GitBranch = "",
+    GitChange = "",
+    GitConflict = "",
+    GitDelete = "",
+    GitIgnored = "",
+    GitRenamed = "",
+    GitStaged = "",
+    GitUnstaged = "",
+    GitUntracked = "",
+    LSPLoaded = "",
+    LSPLoading1 = "",
+    LSPLoading2 = "",
+    LSPLoading3 = "",
+    MacroRecording = "",
+    Paste = "",
+    Search = "",
+    Selected = "",
+    TabClose = "",
   },
 
   lsp = {
@@ -62,6 +108,29 @@ return {
         -- customize default disabled vim plugins
         disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
       },
+    },
+  },
+
+  plugins = {
+    {
+      "onsails/lspkind.nvim",
+      opts = function(_, opts)
+        -- use codicons preset
+        opts.preset = "codicons"
+        -- set some missing symbol types
+        opts.symbol_map = {
+          Array = "",
+          Boolean = "",
+          Key = "",
+          Namespace = "",
+          Null = "",
+          Number = "",
+          Object = "",
+          Package = "",
+          String = "",
+        }
+        return opts
+      end,
     },
   },
 
