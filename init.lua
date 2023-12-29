@@ -19,7 +19,8 @@ return {
 
   -- Set colorscheme to use
   --colorscheme = "astrodark",
-  colorscheme = "poimandres",
+  --colorscheme = "poimandres",
+  colorscheme = "tokyonight",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
